@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/{name}', 'UserController@GetUserView');
+
+$testArray = [1,2,3,4,5];
+Route::get('/items/test','ItemController@GetItemView($testArray)');
