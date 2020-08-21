@@ -29,9 +29,217 @@
                 </div>
             @endif
 
+            <style>
+            
+                                body {
+                      margin:0px;
+                      background-image:url("http://workstuff.net/justimghost/bg_bluer_2200.jpg");
+                      background-repeat:no-repeat;
+                      overflow-y:hidden; /*temporarily hide scrollbar*/}
+                  
+                    /* NEW STYLES FOR ACCOUNT SETTINGS ===================*/
+                    .info {
+                      padding-top:8px;
+                      padding-left:6%;
+                      padding-right:6%;}
+                    
+                    .top {
+                      margin-top:-20px;}
+                    
+                    .info-box {
+                      width:100%;
+                      border:1px solid #d9d9d9;
+                      padding-bottom:4%;}
+                    
+                    .label {
+                      font-family:'Avenir W01';
+                      font-size: 14px;
+                      color:#999999;}
+                    
+                    p.data {
+                      font-family:'Avenir W01';
+                      font-weight:300;
+                      font-size:18px;
+                      line-height:0px;
+                      color:#333;}
+                    
+                    .edit {  
+                      height:48px;
+                      width:100%;
+                      font-family:'Avenir W01';
+                      font-weight:500;
+                      font-size:16px;
+                      color:#333;
+                      box-sizing:border-box;
+                      text-align:right;
+                      padding-top:14px;
+                      padding-right:2%; }
+                    
+                    .red {
+                      color:#E34949;}
+                    
+                    .edit:hover {
+                      background-color:#f2f2f2;}
+                    
+                    .edit:active {
+                      background-color:#eaebec;}
+                    
+                    
+                    /* Header ================*/
+                    .header {
+                      position: relative;
+                      z-index: 10;
+                      width: 100%;
+                      height: 50px;
+                      box-sizing: border-box;
+                      margin-right: auto;
+                      margin-left: auto;
+                      background-color: #4cb2e1;
+                      box-shadow: rgba(0, 0, 0, 0.2) -2px 2px 1px 1px;
+                      color: white;
+                      font-size: 20px;
+                      text-align: center;
+                      font-family: "OpenSans";
+                      font-weight: 400;}
+                    
+                    .headertitle {
+                      font-family:'Avenir W01';
+                      font-weight: 400;
+                      padding-top:16px;}
+                    
+                    .iconbtn {
+                      padding-top:16px;
+                      width: 50px;
+                      height: 50px;
+                      box-sizing: border-box;
+                      font-family: FontAwesome, sans-serif;
+                      font-size: 25px;
+                      font-weight: 400;}
+                    
+                    .iconbtn:hover {
+                      background-color: rgba(88, 88, 88, 0.15);}
+                    
+                    .iconbtn:active {
+                      background-color: rgba(88, 88, 88, 0.35);
+                    }
+
+                    .iconbtn.back {
+                      float: left;
+                      text-align: center;
+                    }
+
+                    .iconbtn.hamburg {
+                      float: right;
+                      text-align: center;
+                    }
+
+
+                    /*TYPOGRAPHY===================*/
+                    h2{  
+                      color: #585858;
+                      font-family: 'Avenir W01', sans-serif;
+                      font-size: 18px;
+                      line-height: 24px;
+                      font-weight: 400;
+                      text-align: left;
+                      margin-bottom:4%;}
+                    
+                    
+                    
+                    
+                    /* Content ================*/
+                    .container{
+                      width:100%;
+                      max-width:800px;
+                      margin-left:auto;
+                      margin-right:auto;
+                      height:100vh;
+                      box-shadow: rgba(0, 0, 0, 0.1) -1px 0px 0px 2px;
+                      background-color:#fafafa;}
+                    
+                    /*BUTTON - note max width ==============*/
+                    .btn-dark {
+                      box-sizing:border-box;
+                      width:100%;
+                      max-width:600px;
+                      margin:0px auto;
+                      padding-top:12px;
+                      color:#fff;
+                      font-family:'Avenir W01';
+                      font-weight:medium;
+                      font-size:20px;
+                      text-align:center;
+                      background-color:#585858;
+                      height:50px;
+                      box-shadow: rgba(0, 0, 0, 0.2) -2px 2px 1px 1px;}
+                    
+                    .btn-dark:hover {
+                      background-color:#4f4f4f; 
+                    }
+                    .btn-dark:active {
+                      background-color:#333333;
+                    }
+
+                    /*THIS PINS THE BUTTON TO THE BOTTOM ==============*/
+                    .btn-box {
+                      position:absolute;
+                      bottom:2%;
+                      left:2%;
+                      right:2%;}
+                </style>
+
             <div class="content">
                 <div class="title m-b-md">
-                    {{$name}}
+
+                    <div class="header">
+                  <div class="iconbtn hamburg"></div>
+                  <div class="headertitle">Account Details</div>
+                </div>
+                <br />
+                <br />
+                <br />
+                  <div class="info top">
+                      <p class="label ">EMAIL</p>
+                      <p class="data">{{$name}}.{{$surname}}@hotmail.com</p>
+                  </div>
+
+                  <div class="info">
+                      <p class="label">FIRST NAME</p>
+                      <p class="data">Dilan</p>
+                  </div>
+
+                  <div class="info">
+                      <p class="label">LAST NAME</p>
+                      <p class="data">{{$surname}}</p>
+                    </div>
+
+                    <div class="info">
+                      <p class="label">Last Purchase</p>
+                      <p class="data">{{$recentPurchase}}</p>
+                    </div>
+
+                    <div class="info">
+                      <p class="label">Date of Birth</p>
+                      <p class="data">{{$dob}}</p>
+                    </div>
+
+                    <div class="info">
+                        <p class="label">Address</p>
+                        <p class="data">{{$address}}</p>
+                    </div>
+
+                  </div>
+                  </div>
+                </div>
+    
+  
+
+
+
+</div>
+
+
+
                 </div>                
             </div>
         </div>
