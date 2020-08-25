@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "sql2.freesqldatabase.com",
+            "driver": "MySQL",
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "name": "TestDB",
+            "password": "pR7!tG9*",
+            "port": 3306,
+            "previewLimit": 50,
+            "server": "localhost",
+            "username": "sql2323722"
+        }
+    ]
+}

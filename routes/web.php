@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,8 @@ Route::get('/', function () {
 });
 
 //Route::get('/{name}/{Bello}', 'UserController@GetUserView');
+
+Route::get('/user/search', 'UserController@Search');
 
 Route::get('/{name}/{surname}/{dob}/{recentPurchase}/{address}', 'UserController@GetUserView');
 //http://127.0.0.1:8000/Dilan/Ormisiar/06011997/%C2%A33,00%20Candle/15%20Wickham%20Road
