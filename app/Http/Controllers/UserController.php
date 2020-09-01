@@ -17,4 +17,14 @@ class UserController extends Controller {
         $users = User::all();
         return view('users.search', ['users'=>$users]);
     }
+
+    public function GetAddUserForm()
+    {
+        return view('users.AddUser', []);
+    }
+
+    public function AddUserStore()
+    {
+        print("exit");
+    }
 }

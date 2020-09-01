@@ -27,3 +27,6 @@ Route::get('/{name}/{surname}/{dob}/{recentPurchase}/{address}', 'UserController
 
 $testArray = [1,2,3,4,5];
 Route::get('/items/','ItemController@GetItemView($testArray)');
+
+Route::get('/user/adduser', 'UserController@GetAddUserForm');
+Route::post('/user/adduser', 'UserController@AddUserStore');
