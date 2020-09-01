@@ -199,39 +199,42 @@
                 <br />
                 <br />
                 <br />
-                  <div class="info top">
-                      <p class="label ">EMAIL</p>
-                      <input name="email" type="email">
-                  </div>
+                  <form method="post" action="/user/adduser">
+                      <div class="info top">
+                          <p class="label ">EMAIL</p>
+                          <input name="email" type="email">
+                      </div>
 
-                  <div class="info">
-                      <p class="label">FIRST NAME</p>
-                      <input name="firstname" type="text">
-                  </div>
+                      <div class="info">
+                          <p class="label">FIRST NAME</p>
+                          <input name="firstname" type="text">
+                      </div>
 
-                  <div class="info">
-                      <p class="label">LAST NAME</p>
-                      <input name="lastname" type="text">
-                    </div>
+                      <div class="info">
+                          <p class="label">LAST NAME</p>
+                          <input name="lastname" type="text">
+                        </div>
 
-                    <div class="info">
-                      <p class="label">Last Purchase</p>
-                      <p class="data"></p>
-                    </div>
+                        <div class="info">
+                          <p class="label">Last Purchase</p>
+                          <p class="data"></p>
+                        </div>
 
-                    <div class="info">
-                      <p class="label">Date of Birth</p>
-                      <p class="data"></p>
-                    </div>
+                        <div class="info">
+                          <p class="label">Date of Birth</p>
+                          <p class="data"></p>
+                        </div>
 
-                    <div class="info">
-                        <p class="label">Address</p>
-                        <p class="data"></p>
-                    </div>
+                        <div class="info">
+                            <p class="label">Address</p>
+                            <p class="data"></p>
+                        </div>
 
-                  </div>
-                    <input type="submit"> Add User </input>
-                  </div>
+                      </div>
+                        @csrf
+                        <input type="submit" name="submit" value="Add User">
+                      </div>
+                </form>
                 </div>
                     </div>
                 </div>                

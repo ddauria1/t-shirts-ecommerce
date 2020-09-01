@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller {
 
@@ -23,8 +24,15 @@ class UserController extends Controller {
         return view('users.AddUser', []);
     }
 
-    public function AddUserStore()
+    public function AddUserStore(Request $request)
     {
-        print("exit");
+        $user = $request->all();
+
+        //validation
+
+        //insert database
+        $userDAO = new User();
+        $userDAO->fill($user);
+        $userDAO->save();
     }
 }
