@@ -51,7 +51,11 @@ class UserController extends Controller {
 
     public function EditUser(Request $request)
     {
-        //$userDAO = User::find($request->all().$Id);
-        //$userDAO->save();
+        $user = $request->all();
+        $userDAO = User::find($user['id']);
+        $userDAO->fill($user);
+        $userDAO->save();
+
+        return redirect()->route('user-search');
     }
 }

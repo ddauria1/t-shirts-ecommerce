@@ -239,7 +239,7 @@
 
                       </div>
                         @csrf
-                        <input type="submit" name="submit" value="Add User">
+                        <input type="submit" name="submit" value="Edit User">
                       </div>
                 </form>
                 </div>
