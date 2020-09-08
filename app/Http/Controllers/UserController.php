@@ -43,6 +43,7 @@ class UserController extends Controller {
 
     public function GetEditUserForm($id){
         $user = User::find($id);
+        
         //User::where('firstname','Danilo')->get(); // look for a specific row from where condition
 
         return view('users.EditUser',['user'=>$user]);

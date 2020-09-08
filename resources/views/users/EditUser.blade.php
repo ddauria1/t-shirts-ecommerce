@@ -203,7 +203,10 @@
                 <br />
                 <br />
                 <br />
-                  <form method="post" action="/user/adduser">
+                  <form method="post" action="/user/editUser">
+
+                      <input type="hidden" name="id" value="{{$user->id}}">           
+
                       <div class="info top">
                           <p class="label ">EMAIL</p>
                           <input name="email" type="email" value="{{$user->email}}">
@@ -211,27 +214,27 @@
 
                       <div class="info">
                           <p class="label">FIRST NAME</p>
-                          <input name="firstName" type="text">
+                          <input name="firstName" type="text" value="{{$user->firstName}}">
                       </div>
 
                       <div class="info">
                           <p class="label">LAST NAME</p>
-                          <input name="surName" type="text">
+                          <input name="surName" type="text" value="{{$user->surName}}">
                         </div>
 
                         <div class="info">
                           <p class="label">Date of Birth</p>
-                          <input name="dateOfBirth" type="date">
+                          <input name="dateOfBirth" type="date" value="{{$user->dateOfBirth}}">
                         </div>
 
                         <div class="info">
                           <p class="label">Recent Purchase</p>
-                          <input name="recentPurchase" type="text">
+                          <input name="recentPurchase" type="text" value="{{$user->recentPurchase}}">
                         </div>
 
                         <div class="info">
                             <p class="label">Address</p>
-                            <textarea name="address"> </textarea>
+                            <textarea name="address">{{$user->address}}</textarea>
                         </div>
 
                       </div>
