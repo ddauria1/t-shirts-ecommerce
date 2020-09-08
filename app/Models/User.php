@@ -9,5 +9,5 @@ class User extends Model {
     public $timestamps = false;
     protected $table = 'user';
 
-    protected $fillable = ['firstname','lastname','email'];
+    protected $fillable = ['email','firstName','surName','dateOfBirth','recentPurchase','address'];
 }

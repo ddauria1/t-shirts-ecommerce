@@ -191,7 +191,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-
+                    @if(isset($Ok))
+                        {{$Ok}}
+                    @endif
                     <div class="header">
                   <div class="iconbtn hamburg"></div>
                   <div class="headertitle">Add User</div>
@@ -207,27 +209,27 @@
 
                       <div class="info">
                           <p class="label">FIRST NAME</p>
-                          <input name="firstname" type="text">
+                          <input name="firstName" type="text">
                       </div>
 
                       <div class="info">
                           <p class="label">LAST NAME</p>
-                          <input name="lastname" type="text">
-                        </div>
-
-                        <div class="info">
-                          <p class="label">Last Purchase</p>
-                          <p class="data"></p>
+                          <input name="surName" type="text">
                         </div>
 
                         <div class="info">
                           <p class="label">Date of Birth</p>
-                          <p class="data"></p>
+                          <input name="dateOfBirth" type="date">
+                        </div>
+
+                        <div class="info">
+                          <p class="label">Recent Purchase</p>
+                          <input name="recentPurchase" type="text">
                         </div>
 
                         <div class="info">
                             <p class="label">Address</p>
-                            <p class="data"></p>
+                            <textarea name="address"> </textarea>
                         </div>
 
                       </div>
