@@ -30,3 +30,6 @@ Route::get('/items/','ItemController@GetItemView($testArray)');
 
 Route::get('/user/adduser', 'UserController@GetAddUserForm');
 Route::post('/user/adduser', 'UserController@AddUserStore');
+
+Route::get('/user/editUser', 'UserController@GetEditUserForm');
+Route::post('/user/editUser','UserController@EditUser');
