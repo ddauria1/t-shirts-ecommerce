@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller {
+class UserController extends Controller implements IUserController {
 
     public function GetUserView($name, $surname, $dob, $recentPurchase, $address) 
     {
@@ -41,7 +41,8 @@ class UserController extends Controller {
         return redirect()->route('user-search');
     }
 
-    public function GetEditUserForm($id){
+    public function GetEditUserForm($id)
+    {
         $user = User::find($id);
         
         //User::where('firstname','Danilo')->get(); // look for a specific row from where condition
@@ -57,5 +58,10 @@ class UserController extends Controller {
         $userDAO->save();
 
         return redirect()->route('user-search');
+    }
+
+    public function DeleteUser(Request $request)
+    {
+        //$user = $request->
     }
 }
