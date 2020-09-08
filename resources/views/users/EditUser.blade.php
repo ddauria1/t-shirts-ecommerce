@@ -190,6 +190,8 @@
             </style>
 
             <div class="content">
+
+                @if(isset($user) && !empty($user))
                 <div class="title m-b-md">
                     @if(isset($Ok))
                         {{$Ok}}
@@ -204,7 +206,7 @@
                   <form method="post" action="/user/adduser">
                       <div class="info top">
                           <p class="label ">EMAIL</p>
-                          <input name="email" type="email">
+                          <input name="email" type="email" value="{{$user->email}}">
                       </div>
 
                       <div class="info">
@@ -239,8 +241,10 @@
                 </form>
                 </div>
                     </div>
-                </div>                
+                </div>
             </div>
+            @else User not found
+            @endif
         </div>
     </body>
 </html>

@@ -41,16 +41,16 @@ class UserController extends Controller {
         return redirect()->route('user-search');
     }
 
-    public function GetEditUserForm()
-    {
-        return view('user.editUser');
+    public function GetEditUserForm($id){
+        $user = User::find($id);
+        //User::where('firstname','Danilo')->get(); // look for a specific row from where condition
+
+        return view('users.EditUser',['user'=>$user]);
     }
 
     public function EditUser(Request $request)
     {
         //$userDAO = User::find($request->all().$Id);
-
-        
-        $userDAO->save();
+        //$userDAO->save();
     }
 }
