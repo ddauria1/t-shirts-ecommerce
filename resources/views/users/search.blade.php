@@ -793,7 +793,7 @@
             </tbody>
         </table>
     </div>
-    <button> Add User </button>
+    <a href="/user/adduser"> Add User </a>
 </body>
 
 </html>

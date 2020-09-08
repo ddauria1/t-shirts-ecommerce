@@ -35,7 +35,9 @@ class UserController extends Controller {
         $userDAO->fill($user);
         $userDAO->save();
         
-        $users = User::all();
-        return view('users.search', ['users'=>$users,'Ok'=>"User Added"]);
+        /*$users = User::all();
+        return view('users.search', ['users'=>$users,'Ok'=>"User Added"]);*/
+
+        return redirect()->route('user-search');
     }
 }
