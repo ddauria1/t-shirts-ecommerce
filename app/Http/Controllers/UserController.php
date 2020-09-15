@@ -85,12 +85,10 @@ class UserController extends Controller implements IUserController {
         return view('');
     }
     
-    public function DeleteUser(Request $request)
+    public function DeleteUser($id)
     {
-        $user = $request->all();
-        $userDAO = User::find($user['id']);
-        $userDAO->delete($user);
-        $userDAO->save();
+        $userDAO = User::find($id);
+        $userDAO->delete();
 
         return redirect()->route('user-search');
     }

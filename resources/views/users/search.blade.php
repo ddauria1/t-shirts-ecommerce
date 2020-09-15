@@ -33,10 +33,9 @@
                     <td data-title="Date of Birth">{{$user->dateOfBirth}}</td>
                     <td data-title="Recent Purchase">{{$user->recentPurchase}}</td>
                     <td data-title="Address">{{$user->address}}</td>
+                    <td data-title="Delete"><a href="/user/deleteUser/{{$user->id}}"> Delete User </a> </td>
                 </tr>
                 <tr>
-                @csrf
-                <button method="delete" action="/user/deleteUser">Delete User</button>
                 </tr>
                 @endforeach
             </tbody>

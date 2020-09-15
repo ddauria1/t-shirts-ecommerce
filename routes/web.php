@@ -44,7 +44,6 @@ Route::get('/user/editUser/{id}', 'UserController@GetEditUserForm');
 Route::put('/user/editUser','UserController@EditUser');
 
 //delete user
-Route::get('/user/deleteUser{id}','UserController@GetDeleteUserForm');
-Route::delete('/user/deleteUser','UserController@DeleteUser');
+Route::get('/user/deleteUser/{id}','UserController@DeleteUser');
 
 //-----------------------------------------------------------------------------------------------------------------------\\
