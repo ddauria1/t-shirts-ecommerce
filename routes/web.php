@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\IUserController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\IUserController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-//static IUserController = new UserController();
+//static $userController = new UserController();
 
 //-----------------------------------------------------------------------------------------------------------------------\\
 
@@ -44,6 +44,7 @@ Route::get('/user/editUser/{id}', 'UserController@GetEditUserForm');
 Route::put('/user/editUser','UserController@EditUser');
 
 //delete user
-Route::delete('/user/deleteUser{$id}','UserController@DeleteUser');
+Route::get('/user/deleteUser{id}','UserController@GetDeleteUserForm');
+Route::delete('/user/deleteUser','UserController@DeleteUser');
 
 //-----------------------------------------------------------------------------------------------------------------------\\

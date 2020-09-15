@@ -34,6 +34,10 @@
                     <td data-title="Recent Purchase">{{$user->recentPurchase}}</td>
                     <td data-title="Address">{{$user->address}}</td>
                 </tr>
+                <tr>
+                @csrf
+                <button method="delete" action="/user/deleteUser">Delete User</button>
+                </tr>
                 @endforeach
             </tbody>
         </table>

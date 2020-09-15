@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class UserController extends Controller implements IUserController {
 
     public function GetUserView($name, $surname, $dob, $recentPurchase, $address) 
     {
-        $user = new Person($name, $surname, $dob, $recentPurchase, $address);
-        return view('users.user', ['user'=>$user]);
+        try 
+        {
+            $user = new Person($name, $surname, $dob, $recentPurchase, $address);
+            return view('users.user', ['user'=>$user]);
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
 
     public function Search()
@@ -22,6 +28,18 @@ class UserController extends Controller implements IUserController {
     public function GetAddUserForm()
     {
         return view('users.AddUser', []);
+    }
+
+    public function GetUserItem(Request $request)
+    {
+        if($request == null) {
+            return view('404');
+        } try {
+            $user = $request->all();
+            
+        } catch(Exception $e) {
+            return view('error.404',['error'->$e]);
+        }
     }
 
     public function AddUserStore(Request $request)
@@ -59,9 +77,21 @@ class UserController extends Controller implements IUserController {
 
         return redirect()->route('user-search');
     }
-
+    
+    public function GetDeleteUserForm(Request $request)
+    {
+        $user = $request->all();
+        $userDAO = User::find($user['id']);
+        return view('');
+    }
+    
     public function DeleteUser(Request $request)
     {
-        //$user = $request->
+        $user = $request->all();
+        $userDAO = User::find($user['id']);
+        $userDAO->delete($user);
+        $userDAO->save();
+
+        return redirect()->route('user-search');
     }
 }
