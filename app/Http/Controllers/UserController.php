@@ -21,13 +21,23 @@ class UserController extends Controller implements IUserController {
 
     public function GetAllUsers()
     {
-        $users = User::all();
-        return view('users.search', ['users'=>$users]);
+        try 
+        {
+            $users = User::all();
+            return view('users.search', ['users'=>$users]);
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
 
     public function GetAddUserForm()
     {
-        return view('users.AddUser', []);
+        try 
+        {
+            return view('users.AddUser', []);
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
 
     public function GetUserItem(Request $request)
@@ -45,46 +55,70 @@ class UserController extends Controller implements IUserController {
 
     public function AddUserStore(Request $request)
     {
-        $user = $request->all();
-        $userDAO = new User();
-        $userDAO->fill($user);
-        $userDAO->save();
+        try 
+        {
+            $user = $request->all();
+            $userDAO = new User();
+            $userDAO->fill($user);
+            $userDAO->save();
 
-        //redirect
-        return redirect()->route('user-search');
+            //redirect
+            return redirect()->route('user-search');
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
 
     public function GetEditUserForm($id)
     {
-        $user = User::find($id);
-        
-        //User::where('firstname','Danilo')->get(); // look for a specific row from where condition
+        try 
+        {
+            $user = User::find($id);
+            
+            //User::where('firstname','Danilo')->get(); // look for a specific row from where condition
 
-        return view('users.EditUser',['user'=>$user]);
+            return view('users.EditUser',['user'=>$user]);
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
 
     public function EditUser(Request $request)
     {
-        $user = $request->all();
-        $userDAO = User::find($user['id']);
-        $userDAO->fill($user);
-        $userDAO->save();
+        try 
+        {
+            $user = $request->all();
+            $userDAO = User::find($user['id']);
+            $userDAO->fill($user);
+            $userDAO->save();
 
-        return redirect()->route('all-productTypes');
+            return redirect()->route('all-productTypes');
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
     
     public function GetDeleteUserForm(Request $request)
     {
-        $user = $request->all();
-        $userDAO = User::find($user['id']);
-        return view('');
+        try 
+        {
+            $user = $request->all();
+            $userDAO = User::find($user['id']);
+            return view('');
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
     
     public function DeleteUser($id)
     {
-        $userDAO = User::find($id);
-        $userDAO->delete();
-
-        return redirect()->route('user-search');
+        try 
+        {
+            $userDAO = User::find($id);
+            $userDAO->delete();
+            return redirect()->route('user-search');
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
 }

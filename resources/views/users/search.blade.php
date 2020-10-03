@@ -7,13 +7,22 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/table.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/users.css') }}" >
+    <link href="cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Logic -->
+    <script src="cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="table.js"></script>
 </head>
 
 <body>
-
+    <script> 
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } ); 
+    </script>
     <div class="table-responsive-vertical shadow-z-1">
 
-        <table id="table" class="table table-hover table-mc-light-blue">
+        <table id='myTable' class="display" style="width:100%">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -42,6 +51,11 @@
         </table>
     </div>
     <a href="/user/adduser"> Add User </a>
+    <script> 
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } ); 
+    </script>
 </body>
 
 </html>

@@ -6,13 +6,14 @@ use Exception;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductController extends Controller implements IProductController
 {
-
+    /* #Region Static Functions */
     private static function FindProduct($productId)
     {
         Product::find($productId);
     }
+    /* #Endregion Static Functions */
 
     public function GetAllProducts()
     {
