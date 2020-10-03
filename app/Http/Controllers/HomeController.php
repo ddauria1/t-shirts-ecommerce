@@ -6,6 +6,6 @@ class HomeController extends Controller
 {
     public function GetHomeView()
     {
-        return view('Home');
+        return view('homePage');
     }
 }

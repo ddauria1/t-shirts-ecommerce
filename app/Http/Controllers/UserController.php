@@ -12,14 +12,14 @@ class UserController extends Controller implements IUserController {
     {
         try 
         {
-            $user = new Person($name, $surname, $dob, $recentPurchase, $address);
+            $user = new User($name, $surname, $dob, $recentPurchase, $address);
             return view('users.user', ['user'=>$user]);
         } catch (Exception $e) {
             echo $e;
         }
     }
 
-    public function Search()
+    public function GetAllUsers()
     {
         $users = User::all();
         return view('users.search', ['users'=>$users]);
@@ -38,24 +38,19 @@ class UserController extends Controller implements IUserController {
             $user = $request->all();
             
         } catch(Exception $e) {
-            return view('error.404',['error'->$e]);
+            dd($e);
+            //return view('error.404',['error'->$e]);
         }
     }
 
     public function AddUserStore(Request $request)
     {
         $user = $request->all();
-
-        //validation
-
-        //insert database
         $userDAO = new User();
         $userDAO->fill($user);
         $userDAO->save();
-        
-        /*$users = User::all();
-        return view('users.search', ['users'=>$users,'Ok'=>"User Added"]);*/
 
+        //redirect
         return redirect()->route('user-search');
     }
 
@@ -75,7 +70,7 @@ class UserController extends Controller implements IUserController {
         $userDAO->fill($user);
         $userDAO->save();
 
-        return redirect()->route('user-search');
+        return redirect()->route('all-productTypes');
     }
     
     public function GetDeleteUserForm(Request $request)

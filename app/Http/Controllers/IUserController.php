@@ -8,7 +8,7 @@ interface IUserController
 {
     function GetUserView($name, $surname, $dob, $recentPurchase, $address);
 
-    function Search();
+    function GetAllUsers();
 
     function GetAddUserForm();
 
